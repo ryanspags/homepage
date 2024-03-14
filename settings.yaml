@@ -1,0 +1,37 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+
+theme: dark
+color: slate
+useEqualHeights: true
+headerStyle: clean
+hideVersion: true
+
+layout:
+  Hypervisor:
+    header: true
+    style: row
+    columns: 1
+  Networking:
+    style: row
+    columns: 2
+  DNS:
+    style: row
+    columns: 4
+  Media:
+    style: row
+    columns: 3
+  Media Management:
+    style: row
+    columns: 4
+  NAS:
+    style: row
+    columns: 4
+
+env_file: /opt/homepage/config/.env
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

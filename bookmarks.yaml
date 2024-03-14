@@ -1,0 +1,31 @@
+---
+
+- Developer:
+    - GitHub:
+        - abbr: GH
+          icon: github.png
+          href: https://github.com
+    - GitLab:
+        - abbr: GL
+          icon: gitlab.png
+          href: https://gitlab.com
+
+- Social:
+    - Reddit:
+        - abbr: RE
+          icon: reddit.png
+          href: https://reddit.com
+    - Facebook:
+        - abbr: FB
+          icon: facebook.png
+          href: https://facebook.com
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          icon: youtube.png
+          href: https://youtube.com
+    - Chess.com:
+        - abbr: CH
+          icon: https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/PedroPinhata/phpkXK09k.png
+          href: https://chess.com

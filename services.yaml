@@ -1,0 +1,227 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Hypervisor:
+    - Proxmox:
+        icon: proxmox.svg
+        href: "{{HOMEPAGE_VAR_PROXMOX_IP_PORT}}"
+        siteMonitor: "{{HOMEPAGE_VAR_PROXMOX_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: proxmox
+            url: "{{HOMEPAGE_VAR_PROXMOX_FQDN}}"
+            username: "{{HOMEPAGE_VAR_PROXMOX_UN}}"
+            password: "{{HOMEPAGE_VAR_PROXMOX_PW}}"
+
+- Monitoring:
+      - Uptime Kuma:
+          icon: uptime-kuma.svg
+          href: "{{HOMEPAGE_VAR_UPTIMEKUMA_STATUS_PAGE}}"
+          siteMonitor: "{{HOMEPAGE_VAR_UPTIMEKUMA_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+              type: uptimekuma
+              url: "{{HOMEPAGE_VAR_UPTIMEKUMA_FQDN}}"
+              slug: "{{HOMEPAGE_VAR_UPTIMEKUMA_SLUG}}"
+
+- Containers:
+     - Portainer:
+        icon: portainer.svg
+        href: "{{HOMEPAGE_VAR_PORTAINER_IP_PORT}}"
+        siteMonitor: "{{HOMEPAGE_VAR_PORTAINER_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PORTAINER_IP_PORT}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
+
+- Networking:
+      - UniFi:
+          icon: unifi.svg
+          href: "{{HOMEPAGE_VAR_UNIFI_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_UNIFI_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: unifi
+            url: "{{HOMEPAGE_VAR_UNIFI_IP_PORT}}"
+            username: "{{HOMEPAGE_VAR_UNIFI_UN}}"
+            password: "{{HOMEPAGE_VAR_UNIFI_PW}}"
+
+      - Speedtest:
+          icon: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zrS0hy-ok_611djsB_p69gHaHa%26pid%3DApi&f=1&ipt=f8e4835a529cf26eb6ced3fe8c93bf580b281d0d77fe7d7c0313087af2f3a9e0&ipo=images
+          href: "{{HOMEPAGE_VAR_SPEEDTEST_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_SPEEDTEST_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: speedtest
+            url: "{{HOMEPAGE_VAR_SPEEDTEST_IP_PORT}}"
+
+- Automation:
+      - Homebridge:
+          icon: homebridge.svg
+          href: "{{HOMEPAGE_VAR_HOMEBRIDGE_FQDN}}"
+          siteMonitor: "{{HOMEPAGE_VAR_HOMEBRIDGE_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+              type: homebridge
+              url: "{{HOMEPAGE_VAR_HOMEBRIDGE_FQDN}}"
+              username: "{{HOMEPAGE_VAR_HOMEBRIDGE_UN}}"
+              password: "{{HOMEPAGE_VAR_HOMEBRIDGE_PW}}"
+
+- NAS:
+      - OMV Services:
+          icon: openmediavault.svg
+          href: "{{HOMEPAGE_VAR_OMV_FQDN}}"
+          siteMonitor: "{{HOMEPAGE_VAR_OMV_IP}}"
+          statusStyle: 'dot'
+          widget:
+            type: openmediavault
+            url: "{{HOMEPAGE_VAR_OMV_FQDN}}"
+            username: "{{HOMEPAGE_VAR_OMV_UN}}"
+            password: "{{HOMEPAGE_VAR_OMV_PW}}"
+            method: services.getStatus
+      - CPU Usage:
+          widget:
+            type: glances
+            url: "{{HOMEPAGE_VAR_GLANCES_IP_PORT}}"
+            metric: cpu
+            chart: false
+      - Disk Usage:
+          widget:
+            type: glances
+            url: "{{HOMEPAGE_VAR_GLANCES_IP_PORT}}"
+            metric: "{{HOMEPAGE_VAR_GLANCES_FS_METRIC}}"
+            chart: false
+      - Network Usage:
+          widget:
+            type: glances
+            url: "{{HOMEPAGE_VAR_GLANCES_IP_PORT}}"
+            metric: network:eth0
+            chart: false
+
+- Media:
+      - Plex:
+          icon: plex.svg
+          href: "{{HOMEPAGE_VAR_PLEX_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_PLEX_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+              type: plex
+              fields: ["streams", "movies", "tv"]
+              url: "{{HOMEPAGE_VAR_PLEX_IP_PORT}}"
+              key: "{{HOMEPAGE_VAR_PLEX_KEY}}"
+
+      - Tautulli:
+          icon: tautulli.svg
+          href: "{{HOMEPAGE_VAR_TAUTULLI_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_TAUTULLI_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+              type: tautulli
+              url: "{{HOMEPAGE_VAR_TAUTULLI_FQDN}}"
+              key: "{{HOMEPAGE_VAR_TAUTULLI_KEY}}"
+
+      - HDHomerun:
+          icon: hdhomerun.png
+          href: "{{HOMEPAGE_VAR_HDHR_IP}}"
+          siteMonitor: "{{HOMEPAGE_VAR_HDHR_IP}}"
+          statusStyle: 'dot'
+          widget:
+              type: hdhomerun
+              fields: ["tunerCount", "channelNumber", "signalQuality"]
+              url: "{{HOMEPAGE_VAR_HDHR_IP}}"
+
+- Media Management:
+      - Transmission:
+          icon: transmission.png
+          href: "{{HOMEPAGE_VAR_TRANSMISSION_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_TRANSMISSION_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: transmission
+            url: "{{HOMEPAGE_VAR_TRANSMISSION_IP_PORT}}"
+            username: "{{HOMEPAGE_VAR_TRANSMISSION_UN}}"
+            password: "{{HOMEPAGE_VAR_TRANSMISSION_PW}}"
+
+      - Overseerr:
+          icon: overseerr.png
+          href: "{{HOMEPAGE_VAR_OVERSEERR_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_OVERSEERR_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: overseerr
+            fields: ["pending", "processing"]
+            url: "{{HOMEPAGE_VAR_OVERSEERR_FQDN}}"
+            key: "{{HOMEPAGE_VAR_OVERSEERR_KEY}}"
+
+      - Radarr:
+          icon: radarr.png
+          href: "{{HOMEPAGE_VAR_RADARR_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_RADARR_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: radarr
+            fields: ["wanted", "queued"]
+            url: "{{HOMEPAGE_VAR_RADARR_FQDN}}"
+            key: "{{HOMEPAGE_VAR_RADARR_KEY}}"
+
+      - Sonarr:
+          icon: sonarr.png
+          href: "{{HOMEPAGE_VAR_SONARR_IP_PORT}}"
+          siteMonitor: "{{HOMEPAGE_VAR_SONARR_IP_PORT}}"
+          statusStyle: 'dot'
+          widget:
+            type: sonarr
+            fields: ["wanted", "queued"]
+            url: "{{HOMEPAGE_VAR_SONARR_FQDN}}"
+            key: "{{HOMEPAGE_VAR_SONARR_KEY}}"
+- DNS:
+  - AdguardHome 1:
+        icon: adguard-home.png
+        href: "{{HOMEPAGE_VAR_ADGUARD1_FQDN}}"
+        siteMonitor: "{{HOMEPAGE_VAR_ADGUARD1_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: adguard
+            url: "{{HOMEPAGE_VAR_ADGUARD1_FQDN}}"
+            fields: ["blocked", "filtered", "latency"]
+            username: "{{HOMEPAGE_VAR_ADGUARD_UN}}"
+            password: "{{HOMEPAGE_VAR_ADGUARD_PW}}"
+
+  - AdguardHome 2:
+        icon: adguard-home.png
+        href: "{{HOMEPAGE_VAR_ADGUARD2_FQDN}}"
+        siteMonitor: "{{HOMEPAGE_VAR_ADGUARD2_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: adguard
+            url: "{{HOMEPAGE_VAR_ADGUARD2_FQDN}}"
+            fields: ["blocked", "filtered", "latency"]
+            username: "{{HOMEPAGE_VAR_ADGUARD_UN}}"
+            password: "{{HOMEPAGE_VAR_ADGUARD_PW}}"
+
+  - AdguardHome Kids 1:
+        icon: adguard-home.png
+        href: "{{HOMEPAGE_VAR_ADGUARDK1_FQDN}}"
+        siteMonitor: "{{HOMEPAGE_VAR_ADGUARDK1_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: adguard
+            url: "{{HOMEPAGE_VAR_ADGUARDK1_FQDN}}"
+            fields: ["blocked", "filtered", "latency"]
+            username: "{{HOMEPAGE_VAR_ADGUARD_UN}}"
+            password: "{{HOMEPAGE_VAR_ADGUARD_PW}}"
+
+  - AdguardHome Kids 2:
+        icon: adguard-home.png
+        href: "{{HOMEPAGE_VAR_ADGUARDK2_FQDN}}"
+        siteMonitor: "{{HOMEPAGE_VAR_ADGUARDK21_IP_PORT}}"
+        statusStyle: 'dot'
+        widget:
+            type: adguard
+            url: "{{HOMEPAGE_VAR_ADGUARDK2_FQDN}}"
+            fields: ["blocked", "filtered", "latency"]
+            username: "{{HOMEPAGE_VAR_ADGUARD_UN}}"
+            password: "{{HOMEPAGE_VAR_ADGUARD_PW}}"
